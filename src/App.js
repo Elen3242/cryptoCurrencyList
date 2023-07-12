@@ -1,13 +1,12 @@
 import Header from './components/header';
-// import Loading from './components/loading';
-// import CryptoCurrencyList from './pages/cryptoCurrencyList'; //page ---> 
-// import Pagination from './pages/cryptoCurrencyList'
-// import Pagination from './pagination'; 
+import CryptoCurrencyList from './pages/cryptoCurrencyList'; //page ---> 
+ 
 function App() {
     return (
         <div>
             <Header />
-       
+            <CryptoCurrencyList />
+            
         </div>
     )
 }
