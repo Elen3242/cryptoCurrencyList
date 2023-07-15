@@ -52,6 +52,11 @@ class CryptoCurrencyList extends React.Component {
             }
         );
     };
+
+    handleRedirectDitailPage = (id) => {
+        console.log(id);
+    }
+   
     
     handleChangePagination = (direction) => {
         const {page} = this.state;
@@ -87,10 +92,12 @@ class CryptoCurrencyList extends React.Component {
         if (error) {
             return <div>{error}</div>;
         }
-    
+
         return (
             <div>
-                <Table currencyList={data} />
+                <Table currencyList={data}
+                onHandleRedirectDitailPage={this.handleRedirectDitailPage}  
+                />
                 {/* <Pagination currentPage={page} totalPages={totalPages} onPageChange={this.handlePageChange} /> */}
                 <Pagination 
                 page ={page}
@@ -99,7 +106,6 @@ class CryptoCurrencyList extends React.Component {
             </div>
         );
 
-       
     }
     
 }

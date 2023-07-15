@@ -1,4 +1,5 @@
 import { renderChangePercent } from '../../helpers/renderChangePercent';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 const Table = (props) => {
@@ -32,7 +33,9 @@ const Table = (props) => {
                     props.currencyList.map((item) => {
                         // console.log(item);
                         return (
-                            <tr> 
+                            <tr key={item.id} onClick={() => {
+                                props.onHandleRedirectDitailPage(item.id)} 
+                            }>
                                 <td>
                                     {item.symbol}
                                  </td>
@@ -42,7 +45,9 @@ const Table = (props) => {
                                 </td>
 
                                 <td>
-                                    {item.name}
+                                    <Link to={`/currency/${item.id}`} >
+                                     {item.name}
+                                    </Link>
                                 </td>
 
                                 <td> 
